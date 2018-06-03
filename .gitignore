@@ -1,1 +1,10 @@
+.idea
 wp-config.php
+
+wp-content/themes/twentyfifteen/*
+wp-content/themes/twentysixteen/*
+wp-content/themes/twentyseventeen/*
+
+wp-content/themes/cq/img/*
+wp-content/themes/cq/node-modules
+
