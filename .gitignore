@@ -1,10 +1,9 @@
 .idea
 wp-config.php
 
-wp-content/themes/twentyfifteen/*
-wp-content/themes/twentysixteen/*
-wp-content/themes/twentyseventeen/*
-
 wp-content/themes/cq/img/*
-wp-content/themes/cq/node-modules
+wp-content/themes/cq/gulpfile.js
+wp-content/themes/cq/*.json
+wp-content/themes/cq/scss/*
+wp-content/themes/cq/node_modules
 
