@@ -4,6 +4,10 @@ wp-config.php
 wp-content/themes/cq/img/*
 wp-content/themes/cq/gulpfile.js
 wp-content/themes/cq/*.json
+wp-content/themes/cq/*.pdf
+wp-content/themes/cq/*.jpeg
+wp-content/themes/cq/*.doc
+wp-content/themes/cq/*.exe
 wp-content/themes/cq/scss/*
 wp-content/themes/cq/node_modules
 
