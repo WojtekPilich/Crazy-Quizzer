@@ -1,4 +1,4 @@
-<footer class="bg-dark text-white">Jestem footerem</footer>
+<!--<footer class="footer"></footer>-->
 <?php wp_footer(); ?>
 </body>
 </html>

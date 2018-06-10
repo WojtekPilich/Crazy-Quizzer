@@ -1,5 +1,6 @@
 <?php get_header(); ?>
 
-    Jestem front-pagem
+    <div class="main-cnt">
+    </div>
 
 <?php get_footer(); ?>

@@ -7,5 +7,15 @@
     <title><?php echo get_bloginfo(); ?></title>
     <?php wp_head(); ?>
 </head>
-<body>
-<header class="bg-info text-white">Jestem headerem</header>
+    <body>
+        <header class="header">
+            <nav class="nav">
+                <a href="front-page.php" class="nav__logo"><img src="<?php echo get_bloginfo('template_directory'); ?>/img/questions-3409194_640.png" alt="question mark"></a>
+                <p class="nav__title">Witaj w Crazy Quizzer!</p>
+                    <?php wp_nav_menu([
+                            'menu' => 'main',
+                            'menu_class' => 'nav__menu'
+                    ]); ?>
+
+            </nav>
+        </header>
