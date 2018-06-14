@@ -19,7 +19,7 @@
             "min": 0,
             "max": 0,
             "layout": "table",
-            "button_label": "",
+            "button_label": "Dodaj pytanie",
             "sub_fields": [
                 {
                     "key": "field_5b196cbfbaf61",
@@ -30,7 +30,7 @@
                     "required": 1,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "",
+                        "width": "25",
                         "class": "",
                         "id": ""
                     },
@@ -57,7 +57,7 @@
                     "min": 0,
                     "max": 0,
                     "layout": "table",
-                    "button_label": "",
+                    "button_label": "Dodaj odpowiedzi",
                     "sub_fields": [
                         {
                             "key": "field_5b196d0cbaf63",
@@ -134,27 +134,27 @@
                             "prepend": "",
                             "append": "",
                             "maxlength": ""
-                        },
-                        {
-                            "key": "field_5b1d538025dd2",
-                            "label": "Correct",
-                            "name": "correct",
-                            "type": "text",
-                            "instructions": "Tutaj wpisz prawidłową odpowiedź",
-                            "required": 1,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": ""
                         }
                     ]
+                },
+                {
+                    "key": "field_5b21483ee04a8",
+                    "label": "Correct",
+                    "name": "correct",
+                    "type": "text",
+                    "instructions": "Tu wpisz prawidłową odpowiedź",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "15",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
                 }
             ]
         },
@@ -171,8 +171,8 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "array",
-            "preview_size": "thumbnail",
+            "return_format": "url",
+            "preview_size": "medium",
             "library": "all",
             "min_width": "",
             "min_height": "",
@@ -197,8 +197,10 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": "",
+    "hide_on_screen": [
+        "featured_image"
+    ],
     "active": 1,
     "description": "",
-    "modified": 1528649103
+    "modified": 1528910521
 }
