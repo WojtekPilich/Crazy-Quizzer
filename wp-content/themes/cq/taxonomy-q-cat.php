@@ -15,12 +15,7 @@
                 // loop through the rows of data
                 while ( have_rows('questions') ) : the_row();
                     $question = get_sub_field('question');
-
                 ?>
-<!--                <p>--><?php //echo $question ?><!--</p>-->
-
-
-
 
                 <?php endwhile;
             else:
