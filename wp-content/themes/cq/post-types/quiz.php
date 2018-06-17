@@ -32,6 +32,7 @@ function quiz_init() {
 			'parent_item_colon'     => __( 'Parent Quiz:', 'cq' ),
 			'menu_name'             => __( 'Quizzes', 'cq' ),
 		),
+
 		'public'                => true,
 		'hierarchical'          => false,
 		'show_ui'               => true,
