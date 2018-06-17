@@ -10,7 +10,7 @@
     <body>
         <header class="header">
             <nav class="nav">
-                <a href="front-page.php" class="nav__logo"><img src="<?php echo get_bloginfo('template_directory'); ?>/img/questions-3409194_640.png" alt="question mark"></a>
+                <a href="<?php echo site_url('/') ?>" class="nav__logo"><img src="<?php echo get_bloginfo('template_directory'); ?>/img/questions-3409194_640.png" alt="question mark"></a>
                 <p class="nav__title">Witaj w Crazy Quizzer!</p>
                     <?php wp_nav_menu([
                             'menu' => 'main',
