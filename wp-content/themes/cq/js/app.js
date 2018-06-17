@@ -5,13 +5,12 @@
 
     //user click event
     answers.on('click', function(e) {
-        e.preventDefault();
-
-        if($(this).attr("data-id")==="correct") {
-            $(this).find('button').addClass('correct');
-        }
+        // e.preventDefault();
+        //
+        // if($(this).attr("data-id")==="correct") {
+        //     $(this).find('button').addClass('correct');
+        // }
     })
-
 
 })( jQuery );
 
