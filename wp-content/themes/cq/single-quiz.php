@@ -1,13 +1,20 @@
-<?php get_header(); ?>
+<?php //get_header(); ?>
+
     <div class="quiz-container">
         <p class="text">Zapraszam do zabawy w moim quizie!</p>
+
+<!--        --><?php //if($answers) {
+//            echo '<pre>' . var_dump($answers) . '</pre>';
+//        } ?>
 
         <!-- main wp loop through  -->
         <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
+            <form class="question-form" method="post">
+
             <h1><?php the_title(); ?></h1>
-            <img src="<?php the_field('image'); ?>" />
             <p><?php the_content(); ?></p>
+                <?php $count = 0; ?>
 
         <!-- loop through field questions -->
         <?php if( have_rows('questions') ): ?>
@@ -21,12 +28,18 @@
 
                 <!-- display question field values -->
                 <section class="question-body">
-                    <?php echo $question ?>
+                    <?php
+                        echo $question;
+                        $count++;
+                    ?>
+
 
                     <?php if( have_rows('answers') ):
                         while ( have_rows('answers') ) : the_row();
                             //grab answer subfield row
                             $answer_row = get_row();
+                            echo $count;
+//                            var_dump($answer_row, $question);
                             ?>
 
                             <!--removing empty strings from answers answers -->
@@ -35,16 +48,28 @@
                                 return is_string($element) && '' !== trim($element);
                             });
                             ?>
-
+                            <!-- WERSJA Z KOLORAMI -->
                             <!-- displaying answers -->
+<!--                            <ul>-->
+<!--                                --><?php //foreach ($filtered as $ans) {
+//
+//                                    $stl = $answers[$count -1] ? 'green' : 'red';
+//
+//                                    echo '<label style="color: ' . $stl . ';">';
+//                                    echo '<input style="color: ' . $stl . ';" type="radio" name="quiz_' . get_the_ID(). '_question_' . $count . '"value="'.$ans.'" class="answer"></input>';
+//                                    echo $ans . '</label>';
+//                                    echo '<br>';
+//                                }
+//                                ?>
+<!--                            </ul>-->
+
                             <ul>
                                 <?php foreach ($filtered as $ans) {
-                                    //in answer is correct add data-id to it - makes js script easier
-                                    if ($ans == $correct) {
-                                        echo '<li class="answer" data-id="correct"><button>' . $ans . '</button></li>';
-                                    } else {
-                                        echo '<li class="answer"><button>' . $ans . '</button></li>';
-                                    }
+
+                                    echo '<label>';
+                                    echo '<input type="radio" name="quiz_' . get_the_ID(). '_question_' . $count . '"value="'.$ans.'"class="answer"></input>';
+                                    echo $ans . '</label>';
+                                    echo '<br>';
                                 }
                                 ?>
                             </ul>
@@ -56,6 +81,7 @@
                     endif;
                     ?>
                 </section>
+                <br>
                 <!-- end of question field loop -->
             <?php
                 endwhile;
@@ -64,7 +90,16 @@
             endif;
         ?>
 
-        <!-- end of main wp loop -->
+            <input type="hidden" name="quizz_id" value="<?php echo get_the_ID(); ?>"/>
+            <button type="submit" name="submit">Sprawdź wyniki</button>
+        </form>
+
+            <?php
+                echo '<br>';
+                echo $result;
+            ?>
+
+            <!-- end of main wp loop -->
             <?php wp_reset_postdata(); ?>
 
         <?php endwhile; ?>
