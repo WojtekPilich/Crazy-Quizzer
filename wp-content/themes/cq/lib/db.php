@@ -18,8 +18,6 @@ function create_user_db() {
     dbDelta( $sql );
 }
 
-
-
 // inserting user values
 function insert_user_score ($user_id, $data) {
 
@@ -42,12 +40,11 @@ function insert_user_score ($user_id, $data) {
 function display_user_scores ($user_id) {
 
     global $wpdb;
-    global $correct_count;
 
     $table_name = $wpdb->prefix . 'quiz_users';
 
 //    $wpdb->get_var("SELECT");
-    $show = $wpdb->get_results("SELECT cor_ans FROM $table_name WHERE usr_id = $user_id");
+    $show = $wpdb->get_results("SELECT cor_ans FROM $table_name WHERE usr_id = $user_id order by id DESC");
     //wp_die(var_dump($show));
 
     return $show;
