@@ -16,7 +16,7 @@ function cq_enqueue_style() {
 }
     //js scripts
 function cq_enqueue_script() {
-    wp_enqueue_script('app', THEME_URI . '/js/app.js', ['jquery'], null, true);
+    wp_enqueue_script('app', THEME_URI . '/js/app.js', ['jquery'], 1.0, true);
 }
 
 add_action( 'wp_enqueue_scripts' , 'cq_enqueue_style' );
@@ -45,41 +45,37 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
                 $count++;
                 $current_answer = 'quiz_' . $_POST['quizz_id'] . '_question_' . $count;
 
-
                 $corr = get_sub_field('correct');
 
                     if ($corr === $_POST[$current_answer]) {
                         $answers[] = true;
                         $correct_count++;
                         $data['question_' . $count] = true;
-//                          echo 'prawidłowa odpowiedź';
                     } else {
                         $answers[] = false;
                         $data['question_' . $count] = false;
-//                          echo 'nieprawidłowa odpowiedź';
                     }
+
             endwhile;
         else :
         endif;
-//        wp_die($correct_count);
+
         $result = "Liczba poprawnych odpowiedzi: $correct_count";
 
 
 //      code for user who are logged in
         if ( is_user_logged_in() ) {
 //      creating table quiz_users
-           create_user_db();
-
+            create_user_db();
+            // grab current user ID
             $user_id = get_current_user_id();
-
+            // insert user score into database
             insert_user_score($user_id, $data);
-
+            // display user results from database
             $results = display_user_scores($user_id);
 
-//            wp_die(var_dump($results));
-
+            // displaying history of current user scores in single-quiz template
             foreach ($results as $res) {
-                //echo '<pre>' . var_dump(maybe_unserialize($res->cor_ans)) . '</pre>';
                 $uns = maybe_unserialize($res->cor_ans);
 
                 $out = '';
@@ -96,11 +92,11 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
                     if($un === 'quiz_id') {
                         $a = $u;
                         $out .= '<tr>';
-                        $out .= '<td>Id Quiz</td>';
+                        $out .= '<td>Quiz ID</td>';
                         $out .= '<td>' . $a . '</td>';
                         $out .= '</tr>';
                     } else {
-                        $a = $u ? "<p style='color: green'>poprawnie</p>" : "<p style='color: red'>Błednie</p>";
+                        $a = $u ? "<p style='color: green'>poprawnie</p>" : "<p style='color: red'>błędnie</p>";
                         $out .= '<tr>';
                         $out .= '<td>' . $qs[$cnt - 1]["question"] . '</td>';
                         $out .= '<td>' . $a . '</td>';
@@ -116,7 +112,6 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
         }
     }
 }
-
 
 //  add quizzer role
 
@@ -140,7 +135,6 @@ function add_quizzer_role () {
 //add_action( 'init', 'add_quizzer_role' );
 
 //remove_role('quizzer');
-
 
 
 
