@@ -1,16 +1,14 @@
 (function($) {
 
-    //create variables from elements
-    const answers = $('.answer');
+    const loginRegisterForm = $('.login-register');
+    const loginRegisterBtn = $('.login-register-btn');
 
-    //user click event
-    answers.on('click', function(e) {
+    loginRegisterForm.addClass('hidden');
+
+    loginRegisterBtn.on('click', function(e) {
         // e.preventDefault();
-        //
-        // if($(this).attr("data-id")==="correct") {
-        //     $(this).find('button').addClass('correct');
-        // }
+        loginRegisterForm.toggleClass('showed');
     })
 
-})( jQuery );
+})(jQuery);
 
