@@ -40,14 +40,9 @@ function insert_user_score ($user_id, $data) {
 function display_user_scores ($user_id) {
 
     global $wpdb;
-
     $table_name = $wpdb->prefix . 'quiz_users';
 
-//    $wpdb->get_var("SELECT");
     $show = $wpdb->get_results("SELECT cor_ans FROM $table_name WHERE usr_id = $user_id order by id DESC");
-    //wp_die(var_dump($show));
-
     return $show;
 }
 
-//wp_die(var_dump(maybe_unserialize( 'a:3:{s:7:"quiz_id";s:2:"76";s:10:"question_1";b:0;s:10:"question_2";b:1;}' )));

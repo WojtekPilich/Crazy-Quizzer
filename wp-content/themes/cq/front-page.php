@@ -1,7 +1,6 @@
 <?php get_header(); ?>
         <h1>Poniżej znajdziesz najnowsze quizy</h1>
         <br>
-        <section class="main-slider">
             <?php
             $q1 = new WP_Query([
                 'post_type' => 'quiz',
@@ -9,13 +8,18 @@
                 'orderby' => 'date',
                 'order' => 'desc'
             ]); ?>
+
+            <section class="main-slider">
             <?php if ( $q1->have_posts() ) : while (  $q1->have_posts() ) : $q1->the_post(); ?>
               <!-- post -->
-                <h2><?php the_title(); ?></h2>
-                <p><?php the_content(); ?></p>
-                <p><?php the_date(); ?></p>
-                <a href="<?php the_permalink(); ?>" class="">Rozwiąż quiz!</a>
-                <br>
+<!--                <h2>--><?php //the_title(); ?><!--</h2>-->
+<!--                <p>--><?php //the_content(); ?><!--</p>-->
+<!--                <p>--><?php //the_date(); ?><!--</p>-->
+<!--                <div class="slider">-->
+                    <a href="<?php the_permalink(); ?>" class="">
+                        <img class="slider-img" src="<?php the_field('image'); ?>" alt="slider-img">
+                    </a>
+<!--                </div>-->
 
                 <?php wp_reset_postdata(); ?>
             <?php endwhile; ?>
@@ -24,11 +28,7 @@
               <!-- no posts found -->
             <?php endif; ?>
         </section>
-
-        <section class="login-register">
-            <?php wp_login_form(); ?>
-            <a href="<?php echo wp_registration_url(); ?>">Zarejestruj się</a>
-        </section>
+        <?php include 'login-form.php' ?>
     </div>
 
 <?php get_footer(); ?>

@@ -141,6 +141,7 @@
         <?php else: ?>
         <?php endif; ?>
 
+        <?php include 'login-form.php' ?>
 
     </div>
 
