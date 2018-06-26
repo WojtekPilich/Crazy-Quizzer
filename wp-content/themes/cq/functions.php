@@ -31,7 +31,7 @@ add_theme_support('post-thumbnails');
 //add_action( 'wp_enqueue_scripts', 'cq_slick' );
 
 
-function cq_enqueue() {
+function cq_styles_and_scripts() {
     wp_enqueue_style('main', THEME_URI . '/css/main.css', null, null, 'all');
     wp_enqueue_script('app', THEME_URI . '/js/app.js', ['jquery', 'slick_js'], '1.8.1', true);
     wp_enqueue_style('slick_css', THEME_URI . '/slick/slick.css');
@@ -39,7 +39,7 @@ function cq_enqueue() {
     wp_enqueue_script('slick_js', THEME_URI . '/slick/slick.min.js', ['jquery'], '', true);
 }
 
-add_action( 'wp_enqueue_scripts' , 'cq_enqueue' );
+add_action( 'wp_enqueue_scripts' , 'cq_styles_and_scripts' );
 
 
 

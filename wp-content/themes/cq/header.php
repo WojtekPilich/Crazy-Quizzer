@@ -9,17 +9,17 @@
     <?php wp_head(); ?>
         </head>
             <body>
-                    <div class="main-cnt">
-                        <header class="header">
-                            <nav class="nav">
-                                <a href="<?php echo site_url('/') ?>" class="nav__logo"><img src="<?php echo get_bloginfo('template_directory'); ?>/img/Question-mark-orange.png" alt="question mark"></a>
-                                <p class="nav__title">Witaj w Crazy Quizzer!</p>
-                                    <?php wp_nav_menu([
-                                            'menu' => 'main',
-                                            'menu_class' => 'nav__menu'
-                                        ]); ?>
-                                <div class="login-register-btn">
-                                    <a href="#"><img src="<?php echo get_bloginfo('template_directory'); ?>/img/cdss-store-login-icon.png" alt=""></a>
-                                </div>
-                            </nav>
-                        </header>
+                <div class="main-cnt">
+                    <header class="header">
+                        <nav class="nav">
+                            <a href="<?php echo site_url('/') ?>" class="nav__logo"><img src="<?php echo get_bloginfo('template_directory'); ?>/img/Question-mark-orange.png" alt="question mark"></a>
+                            <h1 class="nav__title">Crazy Quizzer - dodawaj i rozwiązuj najbardziej zwariowane quizy w sieci!</h1>
+                            <?php wp_nav_menu([
+                                    'menu' => 'main',
+                                    'menu_class' => 'nav__menu'
+                            ]); ?>
+                            <div class="login-register-btn">
+                                <a href="#"><img src="<?php echo get_bloginfo('template_directory'); ?>/img/cdss-store-login-icon.png" alt=""></a>
+                            </div>
+                        </nav>
+                    </header>

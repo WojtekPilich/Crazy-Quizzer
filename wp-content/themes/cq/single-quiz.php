@@ -1,7 +1,8 @@
 <?php get_header(); ?>
 
     <div class="quiz-container">
-        <p class="text">Zapraszam do zabawy w moim quizie!</p>
+        <div class="quiz-column">
+<!--        <p class="text">Zapraszam do zabawy w moim quizie!</p>-->
 
 <!--        --><?php //if($answers) {
 //            echo '<pre>' . var_dump($answers) . '</pre>';
@@ -10,13 +11,13 @@
         <!-- main wp loop through  -->
         <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-            <form class="question-form" method="post">
-
-            <h1><?php the_title(); ?></h1>
+            <p class="quiz-title"><?php the_title(); ?></p>
             <p><?php the_content(); ?></p>
                 <?php $count = 0; ?>
 
-        <!-- loop through field questions -->
+        <form class="question-form" method="post">
+
+            <!-- loop through field questions -->
         <?php if( have_rows('questions') ): ?>
             <?php while ( have_rows('questions') ) : the_row();
 
@@ -25,23 +26,19 @@
                 //grab correct answer field
                 $correct = get_sub_field('correct');
                 ?>
-
                 <!-- display question field values -->
                 <section class="question-body">
                     <?php
-                        echo $question;
+                        echo '<p class="question">' . $question . '</p>';
                         $count++;
                     ?>
-
-
                     <?php if( have_rows('answers') ):
                         while ( have_rows('answers') ) : the_row();
                             //grab answer subfield row
                             $answer_row = get_row();
-                            echo $count;
+//                            echo $count;
 //                            var_dump($answer_row, $question);
                             ?>
-
                             <!--removing empty strings from answers answers -->
                             <?php
                             $filtered = array_filter($answer_row, function ($element) {
@@ -49,17 +46,25 @@
                             });
                             ?>
                             <!-- displaying answers -->
-                            <ul>
+<!--                            <ul>-->
                                 <?php foreach ($filtered as $ans) {
 
-                                    echo '<label>';
+                                    echo '<label class="label-radio">';
                                     echo '<input type="radio" name="quiz_' . get_the_ID(). '_question_' . $count . '"value="'.$ans.'"class="answer"></input>';
                                     echo $ans . '</label>';
                                     echo '<br>';
                                 }
                                 ?>
-                            </ul>
 
+<!--                                --><?php //foreach ($filtered as $ans) {
+//
+//                                    echo '<label for="rd" class="label-radio">';
+//                                    echo $ans . '</label>';
+//                                    echo '<input id="rd" type="radio" name="quiz_' . get_the_ID(). '_question_' . $count . '"value="'.$ans.'"class="answer"></input>';
+//                                    echo '<br>';
+//                                }
+//                                ?>
+<!--                            </ul>-->
                         <!-- end of answer subfield loop -->
                         <?php
                         endwhile;
@@ -143,6 +148,7 @@
 
         <?php include 'login-form.php' ?>
 
+        </div>
     </div>
 
 <?php get_footer(); ?>
