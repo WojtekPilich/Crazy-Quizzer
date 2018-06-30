@@ -1,35 +1,29 @@
 <?php get_header(); ?>
 
     <div class="q-cat-container">
+        <div class="q-cat-wrapper">
 
+        <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-    <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-      <!-- post -->
-        <section class="q-cat-question">
-            <h1><?php the_title(); ?></h1>
-            <a href="<?php the_permalink(); ?>" class="">Rozwiąż quiz!</a>
+            <section class="q-cat-question">
 
+                <h2 class="q-cat-title"><?php the_title(); ?></h2>
 
-            <?php
-            if( have_rows('questions') ):
-                // loop through the rows of data
-                while ( have_rows('questions') ) : the_row();
-                    $question = get_sub_field('question');
-                ?>
+                <div class="overflow">
+                    <a class="q-cat-image" href="<?php the_permalink(); ?>">
+                        <img class="q-cat-image__img" src="<?php the_field('image'); ?>" alt="q-cat img">
+                    </a>
+                </div>
 
-                <?php endwhile;
-            else:
-            endif;
-        ?>
+            </section>
 
-        </section>
-
-
-    <?php endwhile; ?>
+        <?php endwhile; ?>
       <!-- post navigation -->
     <?php else: ?>
       <!-- no posts found -->
     <?php endif; ?>
 
+        </div>
     </div>
+
 <?php get_footer(); ?>

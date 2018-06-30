@@ -13,7 +13,8 @@
                     <header class="header">
                         <nav class="nav">
                             <a href="<?php echo site_url('/') ?>" class="nav__logo"><img src="<?php echo get_bloginfo('template_directory'); ?>/img/Question-mark-orange.png" alt="question mark"></a>
-                            <h1 class="nav__title">Crazy Quizzer - dodawaj i rozwiązuj najbardziej zwariowane quizy w sieci!</h1>
+                            <h1 class="nav__title">Crazy Quizzer</h1>
+                            <p class="nav__excerpt">Zarejestruj się i dodawaj najbardziej zwariowane quizy w sieci!</p>
                             <?php wp_nav_menu([
                                     'menu' => 'main',
                                     'menu_class' => 'nav__menu'

@@ -1,6 +1,7 @@
 (function($) {
 
     //login-form
+    const userLogin = $('#user_login');
     const loginRegisterForm = $('.login-register');
     const loginRegisterBtn = $('.login-register-btn');
     const dim = $('.dim');
@@ -9,9 +10,9 @@
     loginRegisterForm.hide();
 
     loginRegisterBtn.on('click', function(e) {
-        // e.preventDefault();
         loginRegisterForm.show();
         dim.show();
+        userLogin.focus();
     });
 
     dim.on('click', function() {
@@ -27,19 +28,8 @@
         dots: true,
         slidesToShow: 1,
         infinite: true,
-        // centerMode: true,
-        // autoplay: true,
-        // autoplaySpeed: 1500,
-        // mobileFirst: true,
         touchMove: true,
         variableWidth: true,
-        // adaptiveHeight: true,
-        // pauseOnFocus: true
-        // fade: true,
-        // cssEase: 'linear',
-        // rtl: true
-        // autoplay: true
-        // centerPadding: '20px'
     });
 
     let sliderTit = $('.slider-title');
@@ -55,7 +45,6 @@
     sliderImg.on('mouseleave', function(e) {
         $(this).prev().hide();
     });
-
 
 
 })(jQuery);

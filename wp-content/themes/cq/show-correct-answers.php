@@ -38,7 +38,6 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
 
         $result = "Liczba poprawnych odpowiedzi: $correct_count";
 
-
 //      code for user who are logged in
         if ( is_user_logged_in() ) {
 //      creating table quiz_users
@@ -50,12 +49,13 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
             // display user results from database
             $results = display_user_scores($user_id);
 
+            echo '<div class="history-content">';
             // displaying history of current user scores in single-quiz template
             foreach ($results as $res) {
                 $uns = maybe_unserialize($res->cor_ans);
 
                 $out = '';
-                $out .= '<table>';
+                $out .= '<table class="history-table">';
                 $out .= '<tr>';
                 $out .= '<th>Pytanie</th>';
                 $out .= '<th>Wynik:</th>';
@@ -72,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
                         $out .= '<td>' . $a . '</td>';
                         $out .= '</tr>';
                     } else {
-                        $a = $u ? "<p style='color: green'>poprawnie</p>" : "<p style='color: red'>błędnie</p>";
+                        $a = $u ? "<p style='color: green; font-weight: bold'>poprawnie</p>" : "<p style='color: red; font-weight: bold'>błędnie</p>";
                         $out .= '<tr>';
                         $out .= '<td>' . $qs[$cnt - 1]["question"] . '</td>';
                         $out .= '<td>' . $a . '</td>';
@@ -83,8 +83,9 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
                 }
                 $out .= '</table>';
                 echo $out;
-
             }
+            echo '</div>';
         }
     }
 }
+

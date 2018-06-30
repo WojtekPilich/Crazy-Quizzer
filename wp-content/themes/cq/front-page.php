@@ -12,15 +12,10 @@
             <section class="main-slider">
             <?php if ( $q1->have_posts() ) : while (  $q1->have_posts() ) : $q1->the_post(); ?>
               <!-- post -->
-<!--                <h2>--><?php //the_title(); ?><!--</h2>-->
-<!--                <p>--><?php //the_content(); ?><!--</p>-->
-<!--                <p>--><?php //the_date(); ?><!--</p>-->
-<!--                <div class="slider">-->
                     <a href="<?php the_permalink(); ?>" class="slider-link">
                         <span class="slider-title"><?php the_title(); ?></span>
                         <img class="slider-img" src="<?php the_field('image'); ?>" alt="slider-img">
                     </a>
-<!--                </div>-->
 
                 <?php wp_reset_postdata(); ?>
             <?php endwhile; ?>

@@ -2,11 +2,6 @@
 
     <div class="quiz-container">
         <div class="quiz-column">
-<!--        <p class="text">Zapraszam do zabawy w moim quizie!</p>-->
-
-<!--        --><?php //if($answers) {
-//            echo '<pre>' . var_dump($answers) . '</pre>';
-//        } ?>
 
         <!-- main wp loop through  -->
         <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
@@ -51,19 +46,11 @@
 
                                     echo '<label class="label-radio">';
                                     echo '<input type="radio" name="quiz_' . get_the_ID(). '_question_' . $count . '"value="'.$ans.'"class="answer"></input>';
-                                    echo $ans . '</label>';
+                                    echo  '<span>' . $ans . '</span>';
+                                    echo '</label>';
                                     echo '<br>';
                                 }
                                 ?>
-
-<!--                                --><?php //foreach ($filtered as $ans) {
-//
-//                                    echo '<label for="rd" class="label-radio">';
-//                                    echo $ans . '</label>';
-//                                    echo '<input id="rd" type="radio" name="quiz_' . get_the_ID(). '_question_' . $count . '"value="'.$ans.'"class="answer"></input>';
-//                                    echo '<br>';
-//                                }
-//                                ?>
 <!--                            </ul>-->
                         <!-- end of answer subfield loop -->
                         <?php
@@ -82,19 +69,30 @@
         ?>
 
             <input type="hidden" name="quizz_id" value="<?php echo get_the_ID(); ?>"/>
-            <button type="submit" name="submit">Pokaż liczbę poprawnych dopowiedzi</button>
-            <br>
-            <button type="submit" name="show">Pokaż poprawne odpowiedzi</button>
+
+            <?php if(is_user_logged_in()) {
+                echo '<button class="quiz-btn" type="submit" name="submit">' . 'Sprawdź historię swoich odpowiedzi' . '</button>';
+            } else {
+                echo '<button class="quiz-btn" type="submit" name="submit">' . 'Pokaż liczbę poprawnych odpowiedzi' . '</button>';
+            }
+            ?>
+            <button class="quiz-btn" type="submit" name="show">Pokaż poprawne odpowiedzi</button>
         </form>
 
             <?php
                 echo '<br>';
                 echo $result;
-                echo $show;
+            ?>
+
+            <?php
+                //insert history view
+                get_template_part('show-correct-answers');
             ?>
 
             <?php if ($_SERVER['REQUEST_METHOD'] === "POST") {
                 if (isset($_POST['show'])) {
+
+                    echo  '<section class="correct-body">';
 
                     if( have_rows('questions') ):
                         while ( have_rows('questions') ) : the_row();
@@ -102,10 +100,8 @@
                             $ques = get_sub_field('question');
                             $corr = get_sub_field('correct');
 
-                            echo $ques;
+                            echo '<p class="correct-quest">' . $ques . '</p>';
                             ?>
-
-                            <section class="correct-body">
 
                             <?php if( have_rows('answers') ):
                                 while ( have_rows('answers') ) : the_row();
@@ -115,14 +111,11 @@
                                     $filt = array_filter($ans_row, function ($element) {
                                         return is_string($element) && '' !== trim($element);
                                     });
-
-                                    echo '<article class="correct-field">';
                                         foreach ($filt as $anss ) {
                                             if($anss == $corr) {
-                                                echo '<span>' . $anss . '</span>';
+                                                echo '<span class="correct-ans">' . $anss . '</span>';
                                             }
                                         }
-                                    echo '<article>';
                                     echo '<br>';
 
                                 endwhile;
@@ -130,11 +123,12 @@
                             endif;
                             ?>
 
-                            </section>
 
                         <?php endwhile;
                     else :
                     endif;
+
+                    echo '</section>';
                 }
             }
             ?>
