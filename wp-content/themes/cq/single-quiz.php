@@ -10,7 +10,7 @@
             <p><?php the_content(); ?></p>
                 <?php $count = 0; ?>
 
-        <form class="question-form" method="post">
+        <form class="question-form" method="post" action="<?php the_permalink(); ?>#test">
 
             <!-- loop through field questions -->
         <?php if( have_rows('questions') ): ?>
@@ -41,9 +41,7 @@
                             });
                             ?>
                             <!-- displaying answers -->
-<!--                            <ul>-->
                                 <?php foreach ($filtered as $ans) {
-
                                     echo '<label class="label-radio">';
                                     echo '<input type="radio" name="quiz_' . get_the_ID(). '_question_' . $count . '"value="'.$ans.'"class="answer"></input>';
                                     echo  '<span>' . $ans . '</span>';
@@ -51,7 +49,6 @@
                                     echo '<br>';
                                 }
                                 ?>
-<!--                            </ul>-->
                         <!-- end of answer subfield loop -->
                         <?php
                         endwhile;
@@ -70,19 +67,17 @@
 
             <input type="hidden" name="quizz_id" value="<?php echo get_the_ID(); ?>"/>
 
-            <?php if(is_user_logged_in()) {
-                echo '<button class="quiz-btn" type="submit" name="submit">' . 'Sprawdź historię swoich odpowiedzi' . '</button>';
-            } else {
-                echo '<button class="quiz-btn" type="submit" name="submit">' . 'Pokaż liczbę poprawnych odpowiedzi' . '</button>';
-            }
-            ?>
-            <button class="quiz-btn" type="submit" name="show">Pokaż poprawne odpowiedzi</button>
-        </form>
+                <?php if(is_user_logged_in()) {
+                    echo '<button class="quiz-btn" type="submit" name="submit">'
+                        . 'Sprawdź historię swoich odpowiedzi' . '</button>';
+                } else {
+                    echo '<button class="quiz-btn" type="submit" name="submit">'
+                        . 'Pokaż liczbę poprawnych odpowiedzi' . '</button>';
+                } ?>
 
-            <?php
-                echo '<br>';
-                echo $result;
-            ?>
+            <button class="quiz-btn" type="submit" name="show">Pokaż poprawne odpowiedzi</button>
+
+        </form>
 
             <?php
                 //insert history view
@@ -92,7 +87,7 @@
             <?php if ($_SERVER['REQUEST_METHOD'] === "POST") {
                 if (isset($_POST['show'])) {
 
-                    echo  '<section class="correct-body">';
+                    echo  '<section id="test" class="correct-body">';
 
                     if( have_rows('questions') ):
                         while ( have_rows('questions') ) : the_row();
@@ -140,7 +135,7 @@
         <?php else: ?>
         <?php endif; ?>
 
-        <?php include 'login-form.php' ?>
+        <?php require 'login-form.php' ?>
 
         </div>
     </div>

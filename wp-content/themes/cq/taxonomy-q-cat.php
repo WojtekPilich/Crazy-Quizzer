@@ -26,4 +26,6 @@
         </div>
     </div>
 
+    <?php require 'login-form.php' ?>
+
 <?php get_footer(); ?>

@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-        <span class="begin">Wybierz jeden z najnowszych quizów!</span>
+<!--        <span class="begin">Wybierz jeden z najnowszych quizów!</span>-->
         <br>
             <?php
             $q1 = new WP_Query([
@@ -23,8 +23,8 @@
             <?php else: ?>
               <!-- no posts found -->
             <?php endif; ?>
-        </section>
-        <?php include 'login-form.php' ?>
+            </section>
+        <?php require 'login-form.php' ?>
     </div>
 
 <?php get_footer(); ?>

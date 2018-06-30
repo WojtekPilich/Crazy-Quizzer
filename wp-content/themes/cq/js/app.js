@@ -13,11 +13,14 @@
         loginRegisterForm.show();
         dim.show();
         userLogin.focus();
+        $('.main-cnt').toggleClass('overflow');
     });
 
     dim.on('click', function() {
        $(this).hide();
        loginRegisterForm.hide();
+       $('.main-cnt').toggleClass('overflow');
+
     });
 
     //slider
@@ -45,7 +48,6 @@
     sliderImg.on('mouseleave', function(e) {
         $(this).prev().hide();
     });
-
 
 })(jQuery);
 
