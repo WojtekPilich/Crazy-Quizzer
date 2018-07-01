@@ -73,9 +73,12 @@
                 } else {
                     echo '<button class="quiz-btn" type="submit" name="submit">'
                         . 'Pokaż liczbę poprawnych odpowiedzi' . '</button>';
-                } ?>
+                }
 
-            <button class="quiz-btn" type="submit" name="show">Pokaż poprawne odpowiedzi</button>
+                if(isset($_POST['submit'])) {
+                    echo '<button class="quiz-btn" type="submit" name="show">' .'Pokaż poprawne odpowiedzi' . '</button>';
+                }
+            ?>
 
         </form>
 
