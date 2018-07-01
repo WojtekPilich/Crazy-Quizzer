@@ -1,0 +1,14 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  width: 100%;
+  font-family: $font-main;
+  overflow: auto;
+}
+
+.overflow {
+  overflow: hidden;
+}

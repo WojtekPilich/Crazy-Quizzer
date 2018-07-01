@@ -1,0 +1,205 @@
+.quiz-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  overflow: hidden;
+  width: 100%;
+  min-height: 100vh;
+  text-align: center;
+  background-image: url("../img/Free-HD-artistic-wallpaper.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  h1 {
+    padding-top: 1vh;
+  }
+
+  .quiz-column {
+    position: relative;
+    min-height: 100vh;
+    width: 60%;
+    background-color: rgba($color-sc-darker, .7);
+    padding-bottom: 5vh;
+
+    .quiz-title {
+      text-shadow: 0 0 20px rgba(0,0,0,0.3);
+      font-size: $font-size-semi-big;
+      font-weight: bold;
+      margin: 2vh 0 1vh 0;
+      padding: 2vh;
+      background-color: rgba($color-pr-darker, .6);
+    }
+
+    p:nth-child(3) {
+      text-shadow: 0 0 20px rgba(0,0,0,0.3);
+      font-size: $font-size-main;
+      background-color: rgba($color-pr-lighter, .6);
+      padding: 2vh;
+      line-height: 2.2vh;
+    }
+
+    .history-content {
+      margin: 0 auto;
+      width: 90%;
+      height: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-flow: row wrap;
+
+      .history-table {
+        padding: 1vw;
+        text-align: left;
+        margin: 2vw 0.5vw 0 0.5vw;
+        width: 30%;
+
+        tbody {
+          text-shadow: none;
+          background-color: rgba($color-pr-lighter, .7);
+          font-family: $font-main;
+          tr {
+
+            td {
+              font-size: $font-size-main;
+              padding: 0.8vh 1vh;
+            }
+
+            th {
+              font-size: $font-size-main;
+              padding: 1vh;
+              background-color: rgba($color-pr-darker, .7);
+            }
+          }
+        }
+      }
+    }
+
+    .correct-body {
+      padding: 1vw;
+      font-family: $font-main;
+      margin: 3vh auto 0 auto;
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-flow: column nowrap;
+      background-color: rgba($color-sc-darker, .5);
+
+      p {
+        font-size: $font-size-main;
+        padding: 0.2vw 0 0.2vh 0;
+        text-shadow: 0 0 20px rgba(0,0,0,0.2);
+        font-weight: bold;
+        line-height: 1.3vw;
+      }
+
+      span {
+        font-size: $font-size-main;
+        //background-color: rgba($color-pr-lighter, 0.4);
+        padding: 0.3vw;
+        text-shadow: 0 0 20px rgba(0,0,0,0.3);
+        color: #47a028;
+        font-weight: bold;
+        margin-bottom: 0.5vh;
+      }
+    }
+
+    .question-form {
+      position: relative;
+      padding-top: 2vh;
+      width: auto;
+      height: auto;
+
+      .question-body {
+        padding: 1vh;
+        width: 70%;
+        margin: 0 auto;
+
+        .question {
+          text-shadow: 0 0 20px rgba(0,0,0,0.3);
+          font-size: $font-size-main;
+          padding-bottom: 1vh;
+          font-weight: bold;
+          line-height: 2.5vh;
+          letter-spacing: 0.1vw;
+        }
+      }
+
+      .quiz-btn {
+        font-family: $font-main;
+        border: 2px solid $color-sc-lighter;
+        outline: none;
+        background-color: $color-pr-lighter;
+        font-size: $font-size-main;
+        font-weight: bold;
+        color: #fff;
+        display: block;
+        padding: 0.5vw;
+        margin: 0.3vw auto;
+        text-shadow: 0 0 20px rgba(0,0,0,0.3);
+        transition: 0.3s all;
+
+        &:hover {
+          background-color: lighten($color-pr-lighter, 7%);
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+input[type='radio'] {
+  position: absolute;
+  opacity: 0;
+  &:checked + span {
+    color: $color-pr-darker;
+  }
+}
+
+.label-radio {
+  display: inline-block;
+  text-shadow: 0 0 20px rgba(0,0,0,0.3);
+  padding: 0.6vh;
+  font-size: $font-size-main;
+  font-weight: bold;
+  font-style: italic;
+  letter-spacing: 0.1vw;
+  transition: 0.2s all;
+
+  &:hover {
+    cursor: pointer;
+    color: lighten($color-pr-lighter, 10%);
+  }
+
+  &:before {
+    position: relative;
+    content:'';
+    background: $color-sc-lighter;
+    border-radius: 100%;
+    border: 2px solid $color-pr-lighter;
+    width: 0.6em;
+    height: 0.6em;
+    display: inline-block;
+    top: 0.1em;
+    left: -0.1em;
+    margin-right: .8em;
+    vertical-align: top;
+    cursor: pointer;
+    text-align: center;
+    transition: all 250ms ease;
+  }
+}
+
+.result {
+  font-family: $font-main;
+  font-size: $font-size-main;
+  color: #fff;
+  width: 40%;
+  display: inline-block;
+  margin-top: 2vh;
+  padding: 1vw;
+  background-color: rgba($color-sc-darker, .5);
+  border: 3px solid $color-sc-lighter;
+  text-shadow: 0 0 20px rgba(0,0,0,0.3);
+}

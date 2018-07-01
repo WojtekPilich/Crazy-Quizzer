@@ -1,0 +1,88 @@
+.login-register {
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 12vh;
+  margin: auto;
+  width: 400px;
+  font-family: $font-main;
+  height: 390px;
+  background-color: $color-sc-darker;
+  box-shadow: 7px 7px 54px -12px rgba(0,0,0,0.58);
+
+  form {
+    position: relative;
+    border: 12px solid $color-sc-darker;
+    background: linear-gradient($color-pr-lighter, $color-pr-darker);
+    padding: 20px;
+    display: flex;
+    flex-flow: column wrap;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+
+    p {
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    input:not([id='rememberme']) {
+      height: 40px;
+      width: 200px;
+      padding: 5px;
+      font-size: 1.2rem;
+      color: #000;
+      margin: 10px 0;
+    }
+
+    .login-submit {
+      input {
+        height: inherit;
+        background-color: $color-sc-darker;
+        border: none;
+        margin: 20px 15px 5px 15px;
+        padding: 20px;
+        color: #fff;
+        font-weight: bold;
+        transition: 0.3s all;
+        font-family: $font-main;
+
+        &:hover {
+          cursor: pointer;
+          background-color: lighten($color-sc-darker, 10%);
+        }
+      }
+    }
+  }
+
+  a {
+    color: #ff884a;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s all;
+
+    &:hover {
+      color: #dd521b;
+    }
+  }
+}
+
+.dim {
+  position: fixed;
+  background-color: rgba(128,128,128, 0.7);
+  height: 100vh;
+  width: 100vw;
+  top:0;
+  left:0;
+}
+
+#loginform .login-remember {
+  padding: 0;
+  background: transparent;
+  font-family: $font-main;
+  font-size: 0.8rem;
+}

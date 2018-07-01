@@ -1,0 +1,66 @@
+.q-cat-container {
+  padding-top: 10vh;
+  width: 100%;
+  height: 90vh;
+  background-image: url("../img/light-bulb-1246043_1920.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  .q-cat-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row nowrap;
+    width: 70%;
+    padding: 5vw;
+    height: 50vh;
+
+    .q-cat-question {
+      width: 33%;
+      margin: 1vh 1vw;
+      overflow: hidden;
+      position: relative;
+
+      .q-cat-title {
+        background-color: rgba($color-sc-lighter, .5);
+        padding: 1vw;
+        font-size: $font-size-semi-big;
+        font-family: $font-main;
+        text-shadow: 0 0 20px rgba(0,0,0,0.3);
+        line-height: 1.5vw;
+      }
+
+      .overflow {
+        overflow: hidden;
+      }
+
+      .q-cat-image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-height: 100%;
+        max-width: 100%;
+        height: 100%;
+
+        &__img {
+          display: block;
+          max-height: 100%;
+          max-width: 100%;
+          height: auto;
+          width: auto;
+          overflow: hidden;
+          transition: 0.3s all;
+
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+      }
+    }
+  }
+}

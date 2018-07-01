@@ -1,0 +1,127 @@
+.header {
+  width: 100%;
+  background-color: rgba(128, 128, 128, .4);
+  height: 10vh;
+  border-bottom: 2px solid $color-sc-lighter;
+
+  .nav {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    &__logo {
+      display: inline-block;
+      font-size: 0;
+      transition: 0.4s all;
+
+      img {
+        height: 9vh;
+        width: auto;
+        margin-left: 1vw;
+        margin-right: 1vw;
+      }
+
+      &:hover {
+        transform: rotate(15deg);
+      }
+    }
+
+    &__title {
+      padding: 0.5vw;
+      font-size: $font-size-front-page;
+      text-shadow: 0 0 20px rgba(0,0,0,0.4);
+      letter-spacing: 1px;
+      line-height: 3.5vh;
+      font-weight: bold;
+      margin-left: -2vw;
+    }
+
+    &__excerpt {
+      line-height: 2vh;
+      font-size: $font-size-main;
+      display: flex;
+      align-items: center;
+      font-weight: bold;
+      height: 7vh;
+      text-align: center;
+      text-shadow: 0 0 20px rgba(0,0,0,0.2);
+    }
+
+    &__menu {
+      width: 50vw;
+      height: 10vh;
+      display: flex;
+      flex-grow: 1;
+      flex-shrink: 1;
+      flex-flow: row wrap;
+      justify-content: center;
+      align-items: center;
+
+      li {
+        display: flex;
+        flex-shrink: 1;
+        align-items: center;
+        justify-content: center;
+        height: 60%;
+        background-color: #ff8d3e;
+        text-align: center;
+        margin: 0 0.3vw;
+        border: 3px solid $color-sc-lighter;
+        transition: 0.3s all;
+        width: 6vw;
+        font-size:0;
+        &:hover {
+          background-color: lighten($color-pr-lighter, 7%);
+          cursor: pointer;
+        }
+
+        a {
+          padding: 0.5vw;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100%;
+          text-align: center;
+          text-decoration: none;
+          font-weight: bold;
+          color: #fff;
+          outline: none;
+          font-size: $font-size-main;
+          text-shadow: 0 0 20px rgba(0,0,0,0.2);
+        }
+      }
+    }
+
+    .login-register-btn {
+      margin-right: 1vw;
+      height: 8vh;
+      //width: 8vw;
+      transition: 0.3s all;
+
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+      }
+
+      a {
+        display: inline-block;
+        height: inherit;
+
+
+        img {
+          display: inline-block;
+          font-size: 0;
+          height: inherit;
+          width: auto;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
