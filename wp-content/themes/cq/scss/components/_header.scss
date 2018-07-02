@@ -35,7 +35,7 @@
       letter-spacing: 1px;
       line-height: 3.5vh;
       font-weight: bold;
-      margin-left: -2vw;
+      margin-left: -1vw;
     }
 
     &__excerpt {
@@ -72,6 +72,7 @@
         transition: 0.3s all;
         width: 6vw;
         font-size:0;
+
         &:hover {
           background-color: lighten($color-pr-lighter, 7%);
           cursor: pointer;
