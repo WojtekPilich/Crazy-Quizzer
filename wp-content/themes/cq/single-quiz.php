@@ -78,6 +78,7 @@
                 if(isset($_POST['submit'])) {
                     echo '<button class="quiz-btn" type="submit" name="show">' .'Pokaż poprawne odpowiedzi' . '</button>';
                 }
+                wp_nonce_field();
             ?>
 
         </form>
