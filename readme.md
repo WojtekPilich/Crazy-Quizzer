@@ -1,7 +1,7 @@
 # Crazy Quizzer | online quiz generator
 *Author: Wojciech Pilich* <br>
 *Contact: wojciech.pilich@gmail.com* <br>
-*Website: *http://crazyquizzer.pl**
+*Website: *http://www.crazyquizzer.pl**
 
 Crazy quizzer is a PHP online application where you can face yourself with funny quizzes from different categories.
 
