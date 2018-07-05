@@ -164,7 +164,7 @@
             "name": "image",
             "type": "image",
             "instructions": "Dodaj obrazek do quizu",
-            "required": 0,
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -174,12 +174,12 @@
             "return_format": "url",
             "preview_size": "medium",
             "library": "all",
-            "min_width": "",
-            "min_height": "",
+            "min_width": 400,
+            "min_height": 471,
             "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
+            "max_width": 800,
+            "max_height": 600,
+            "max_size": 2,
             "mime_types": ""
         }
     ],
@@ -202,5 +202,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1528910521
+    "modified": 1530812731
 }
