@@ -25,16 +25,16 @@ You can use app in two ways:
 ## Instructions:
 1. Log in
 2. Open admin panel
-3. Select *Quizzes* 
-4. Hit *Add New*
-5. Add: *title*, *content*
-6. Choose and select *Q cat*
-7. Hit *Dodaj pytanie* and then type your question
-8. Hit *Dodaj odpowiedzi* and then type your answers
-9. **IMPORTANT!** you have to fill *Correct* field in order to display and count user answers properly
-10. Again hit *Dodaj pytanie* and add more questions
-11. Remember to add *Image* and meet it's size requirements (don't worry, you can manually resize your image)
-12. Make sure you made up all required fields and then hit *Opublikuj*
+3. Select __*Quizzes*__ 
+4. Hit __*Add New*__
+5. Add: __*title*__, __*content*__
+6. Choose and select __*Q cat*__
+7. Hit __*Dodaj pytanie*__ and then type your question
+8. Hit __*Dodaj odpowiedzi*__ and then type your answers
+9. **IMPORTANT!** you have to fill __*Correct*__ field in order to display and count user answers properly
+10. Again hit __*Dodaj pytanie*__ and add more questions
+11. Remember to add __*Image*__ and meet it's size requirements (don't worry, you can manually resize your image)
+12. Make sure you made up all required fields and then hit __*Opublikuj*__
 
 Your awesome quiz is ready! Sit back, relax and enjoy Crazzy Quizzer :)
 
