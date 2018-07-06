@@ -41,14 +41,13 @@
                             });
                             ?>
                             <!-- displaying answers -->
-                                <?php foreach ($filtered as $ans) {
-                                    echo '<label class="label-radio">';
-                                    echo '<input type="radio" name="quiz_' . get_the_ID(). '_question_' . $count . '"value="'.$ans.'"class="answer"></input>';
-                                    echo  '<span>' . $ans . '</span>';
-                                    echo '</label>';
-                                    echo '<br>';
-                                }
-                                ?>
+                                <?php foreach ($filtered as $ans) : ?>
+                                    <label class="label-radio">
+                                    <?='<input type="radio" name="quiz_' . get_the_ID() . '_question_' . $count . '"value="' . $ans . '"class="answer"></input>'; ?>
+                                    <span> <?= $ans ?> </span>
+                                    </label>
+                                    <br>
+                                <?php endforeach;?>
                         <!-- end of answer subfield loop -->
                         <?php
                         endwhile;
@@ -65,7 +64,7 @@
             endif;
         ?>
 
-            <input type="hidden" name="quizz_id" value="<?php echo get_the_ID(); ?>"/>
+            <input type="hidden" name="quizz_id" value="<?= get_the_ID();?>"/>
 
                 <?php if(is_user_logged_in()) {
                     echo '<button class="quiz-btn" type="submit" name="submit">'
@@ -121,7 +120,6 @@
                             else :
                             endif;
                             ?>
-
 
                         <?php endwhile;
                     else :
