@@ -21,7 +21,7 @@ function cq_styles_and_scripts() {
 add_action( 'wp_enqueue_scripts' , 'cq_styles_and_scripts' );
 
 add_action('wp_logout','auto_redirect_after_logout');
-function auto_redirect_after_logout(){
+    function auto_redirect_after_logout(){
     wp_redirect( home_url() );
     exit();
 }
