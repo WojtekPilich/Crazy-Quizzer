@@ -36,9 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
         else :
         endif;
 
-        $result = "Liczba poprawnych odpowiedzi: $correct_count";
-        echo '<p id="test" class="result">' . $result . '</p>';
-
+        require 'views/show-correct-answers.view.php';
         require 'logged-in-users.php';
     }
 }
