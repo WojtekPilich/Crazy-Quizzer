@@ -16,7 +16,7 @@ You can use app in two ways:
 ## Technologies used:
 * **PHP** - logic programming,
 * **MySQL** - database storing data,
-* **Vanilla Javascript** - simple animation scripts,
+* **Javascript / Jquery** - simple animation scripts,
 * **CSS Flexbox** - flexible website layout,
 * **SASS** - pre-processing own styles,
 * **GULP** - automation of work,
