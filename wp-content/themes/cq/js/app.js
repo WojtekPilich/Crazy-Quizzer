@@ -43,11 +43,14 @@
     sliderImg.on('mouseenter', function(e) {
         $(this).prev().show();
     });
+
     sliderImg.stopImmediatePropagation();
 
     sliderImg.on('mouseleave', function(e) {
         $(this).prev().hide();
+
     });
+
 
 })(jQuery);
 
