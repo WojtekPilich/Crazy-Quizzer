@@ -36,7 +36,7 @@ You can use app in two ways:
 11. Remember to add __*Image*__ and meet it's size requirements (don't worry, you can manually resize your image)
 12. Make sure you made up all required fields and then hit __*Opublikuj*__
 
-Your awesome quiz is ready! Sit back, relax and enjoy Crazzy Quizzer :)
+Your awesome quiz is ready! Sit back, relax and enjoy my Crazzy Quizzer :)
 
 
 
