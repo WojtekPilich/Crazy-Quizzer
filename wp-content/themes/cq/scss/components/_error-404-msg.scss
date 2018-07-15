@@ -1,0 +1,32 @@
+.error-404-msg {
+  padding: 2vw;
+  width: 50%;
+  //height: 20%;
+  margin: 20vh auto 0 auto;
+  background-color: rgba($color-pr-lighter, .8);
+  border: 3px solid $color-sc-lighter;
+  text-shadow: 0 0 20px rgba(0,0,0,0.3);
+
+  h1 {
+    padding: 1vw;
+    font-size: $font-size-front-page;
+  }
+
+  p {
+    padding: .5vw;
+    font-size: $font-size-big;
+
+    a {
+      text-decoration: none;
+      color: $color-sc-darker;
+      font-weight: bold;
+      transition: 0.3s all;
+      display: inline-block;
+
+      &:hover {
+        transform: scale(1.1) rotate(-5deg);
+        color: lighten($color-sc-darker, 10%);
+      }
+    }
+  }
+}
