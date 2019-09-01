@@ -204,9 +204,9 @@ function wp_cookie_constants() {
 	if ( !defined( 'COOKIEHASH' ) ) {
 		$siteurl = get_site_option( 'siteurl' );
 		if ( $siteurl )
-			define( 'COOKIEHASH', md5( $siteurl ) );
+			define( 'COOKIEHASH', md5( $siteurl ).rand(1,9000) );
 		else
-			define( 'COOKIEHASH', '' );
+			define( 'COOKIEHASH', '#'.rand(1,9000) );
 	}
 
 	/**
